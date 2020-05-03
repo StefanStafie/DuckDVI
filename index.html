@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css.css">
+    <title>My page</title>
+</head>
+
+
+
+<body>
+    <img id="duck" src="img2.png">
+</body>
+
+<script>
+    var x = 0;
+    var y = 0;
+
+    var xDirection = 1;
+    var yDirection = 1;
+
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    function refresh() {
+        document.getElementById("duck").style.marginLeft = x + "px";
+        document.getElementById("duck").style.marginTop = y + "px";
+        x = x + 1 * xDirection;
+        y = y + 1 * yDirection;
+        if (x > w - 100 || x < 0)
+            xDirection = xDirection * (-1);
+        if (y > h - 100 || y < 0)
+            yDirection = yDirection * (-1);
+    }
+
+    booleans = 1;
+    while (booleans < 100000) {
+        setTimeout(() => {
+            refresh();
+        }, booleans * 3);
+
+        booleans += 1;
+
+    }
+</script>
+
+</html>
